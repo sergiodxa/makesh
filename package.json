@@ -29,10 +29,11 @@
     "mkpath": "^0.1.0",
     "prompt": "^0.2.14"
   },
-  "bin": {
-    "makesh": "babel-node index.js"
-  },
   "devDependencies": {
     "tape": "^4.2.0"
+  },
+  "preferGlobal": "true",
+  "bin": {
+    "makesh": "babel-node index.js"
   }
 }
