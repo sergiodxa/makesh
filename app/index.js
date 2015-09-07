@@ -1,5 +1,7 @@
 // node_modules
 import prompt from 'prompt';
+import colors from 'colors';
+
 import createFolders from './libs/createFolders';
 import createFiles from './libs/createFiles';
 
@@ -39,8 +41,8 @@ export default function makeApp(pathFolder = false) {
                     .reduce((p, c) => (p === true && c === true));
 
     if (result) {
-      return console.log('App created');
+      return console.log(colors.green('App created'));
     }
-    return console.error('App creator failed');
+    return console.error(colors.red('App creator failed'));
   });
 }
