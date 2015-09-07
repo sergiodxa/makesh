@@ -1,0 +1,37 @@
+{
+  "name": "makesh",
+  "version": "1.0.0",
+  "description": "A CLI program to initialize an app",
+  "main": "index.js",
+  "scripts": {
+    "start": "babel-node index.js",
+    "test:app": "babel-node ./test/app.js",
+    "test": "npm run test:app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sergiodxa/makesh.git"
+  },
+  "keywords": [
+    "cli",
+    "initialize"
+  ],
+  "author": "Sergio Daniel Xalambrí <sergio@xalambri.com.ar> (http://sergio.xalambri.com.ar/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sergiodxa/makesh/issues"
+  },
+  "homepage": "https://github.com/sergiodxa/makesh#readme",
+  "dependencies": {
+    "babel": "^5.8.23",
+    "commander": "^2.8.1",
+    "mkpath": "^0.1.0",
+    "prompt": "^0.2.14"
+  },
+  "bin": {
+    "makesh": "babel-node index.js"
+  },
+  "devDependencies": {
+    "tape": "^4.2.0"
+  }
+}
