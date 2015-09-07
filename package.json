@@ -2,9 +2,9 @@
   "name": "makesh",
   "version": "1.0.0",
   "description": "A CLI program to initialize an app",
-  "main": "index.js",
+  "main": "bin/index.js",
   "scripts": {
-    "start": "babel-node index.js",
+    "start": "node bin/index.js",
     "test:app": "babel-node ./test/app.js",
     "test": "npm run test:app"
   },
@@ -34,6 +34,6 @@
   },
   "preferGlobal": "true",
   "bin": {
-    "makesh": "babel-node index.js"
+    "makesh": "bin/index.js"
   }
 }
