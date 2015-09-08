@@ -15,25 +15,22 @@ var _getTemplate = require('./getTemplate');
 
 var _getTemplate2 = _interopRequireDefault(_getTemplate);
 
+var _makePath = require('./makePath');
+
+var _makePath2 = _interopRequireDefault(_makePath);
+
 function createFiles(appName, framework) {
   var pathFolder = arguments.length <= 2 || arguments[2] === undefined ? false : arguments[2];
 
   try {
     if (framework === 'react') {
-      if (pathFolder) {
-        _fs2['default'].writeFileSync(pathFolder + '/' + appName + '/index.js', (0, _getTemplate2['default'])('index', appName));
+      _fs2['default'].writeFileSync((0, _makePath2['default'])(appName, pathFolder) + '/index.js', (0, _getTemplate2['default'])('index', appName));
 
-        _fs2['default'].writeFileSync(pathFolder + '/' + appName + '/messages.json', (0, _getTemplate2['default'])('messages'));
+      _fs2['default'].writeFileSync((0, _makePath2['default'])(appName, pathFolder) + '/messages.json', (0, _getTemplate2['default'])('messages'));
 
-        _fs2['default'].writeFileSync(pathFolder + '/' + appName + '/components/App.jsx', (0, _getTemplate2['default'])('appComponent'));
-      } else {
-        _fs2['default'].writeFileSync(appName + '/index.js', (0, _getTemplate2['default'])('index', appName));
-
-        _fs2['default'].writeFileSync(appName + '/messages.json', (0, _getTemplate2['default'])('messages'));
-
-        _fs2['default'].writeFileSync(appName + '/components/App.jsx', (0, _getTemplate2['default'])('appComponent'));
-      }
+      _fs2['default'].writeFileSync((0, _makePath2['default'])(appName, pathFolder) + '/components/App.jsx', (0, _getTemplate2['default'])('appComponent'));
     }
+
     return true;
   } catch (error) {
     throw error;
