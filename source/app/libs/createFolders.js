@@ -1,20 +1,23 @@
 import mkpath from 'mkpath';
+import appExists from './appExists';
+import makePath from './makePath';
+import fs from 'fs-extra';
 
 export default function createFolders(appName, framework, pathFolder = false) {
   try {
-    if (framework === 'react') {
-      if (pathFolder) {
-        mkpath.sync(`${pathFolder}/${appName}`);
-        mkpath.sync(`${pathFolder}/${appName}/components`);
-        mkpath.sync(`${pathFolder}/${appName}/stores`);
-        mkpath.sync(`${pathFolder}/${appName}/actions`);
-      } else {
-        mkpath.sync(`${appName}`);
-        mkpath.sync(`${appName}/components`);
-        mkpath.sync(`${appName}/stores`);
-        mkpath.sync(`${appName}/actions`);
-      }
+    if (appExists(appName, pathFolder)) {
+      fs.copySync(makePath(appName, pathFolder), 'tmp');
+      fs.removeSync(makePath(appName, pathFolder));
+      fs.copySync('tmp', `${makePath(appName, pathFolder)}/legacy`);
+      fs.removeSync('tmp');
     }
+    if (framework === 'react') {
+      mkpath.sync(`${makePath(appName, pathFolder)}`);
+      mkpath.sync(`${makePath(appName, pathFolder)}/components`);
+      mkpath.sync(`${makePath(appName, pathFolder)}/stores`);
+      mkpath.sync(`${makePath(appName, pathFolder)}/actions`);
+    }
+
     return true;
   } catch (error) {
     throw error;
