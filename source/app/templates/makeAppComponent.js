@@ -1,5 +1,6 @@
 function makeAppComponent() {
   return `import React from 'react';
+import messages from '../messages.json';
 
 const App = React.createClass({
   displayName: 'App',
@@ -10,7 +11,7 @@ const App = React.createClass({
   getDefaultProps() {
     return {
       lang: 'es',
-      messages: {},
+      messages,
     };
   },
   render() {
