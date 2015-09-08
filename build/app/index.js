@@ -24,6 +24,10 @@ var _libsCreateFiles = require('./libs/createFiles');
 
 var _libsCreateFiles2 = _interopRequireDefault(_libsCreateFiles);
 
+var _availableFrameworksJs = require('../available-frameworks.js');
+
+var _availableFrameworksJs2 = _interopRequireDefault(_availableFrameworksJs);
+
 function makeApp() {
   var pathFolder = arguments.length <= 0 || arguments[0] === undefined ? false : arguments[0];
 
@@ -52,6 +56,10 @@ function makeApp() {
     var framework = _ref.framework;
 
     if (error) throw error;
+
+    if (_availableFrameworksJs2['default'].indexOf(framework.toLowerCase()) === -1) {
+      return console.error(_colors2['default'].red('Selected framework invalid.'));
+    }
 
     var transforms = [_libsCreateFolders2['default'], _libsCreateFiles2['default']];
 

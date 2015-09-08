@@ -4,6 +4,7 @@ import colors from 'colors';
 
 import createFolders from './libs/createFolders';
 import createFiles from './libs/createFiles';
+import availableFrameworks from '../available-frameworks.js';
 
 export default function makeApp(pathFolder = false) {
   prompt.start();
@@ -28,6 +29,10 @@ export default function makeApp(pathFolder = false) {
     },
   }, function done(error, {appName, framework}) {
     if (error) throw error;
+
+    if (availableFrameworks.indexOf(framework.toLowerCase()) === -1) {
+      return console.error(colors.red('Selected framework invalid.'));
+    }
 
     const transforms = [
       createFolders,
