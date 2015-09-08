@@ -33,6 +33,8 @@ The [path] is a string (with or without quotes) who set the relative rute where 
 #### app
 This command init a prompt questions about the application name and the selected framework.
 
+If the application already exists this command will move the existent application to a legacy folder inside the application folder.
+
 ## Tests
 To run test you need to write in the terminal:
 
