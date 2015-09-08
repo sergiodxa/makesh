@@ -35,6 +35,8 @@ This command init a prompt questions about the application name and the selected
 
 If the application already exists this command will move the existent application to a legacy folder inside the application folder.
 
+If the defined framework is not supported or is invalid the console show an error.
+
 ## Tests
 To run test you need to write in the terminal:
 
