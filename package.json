@@ -1,6 +1,6 @@
 {
   "name": "makesh",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "A CLI program to initialize an app",
   "main": "build/index.js",
   "scripts": {
