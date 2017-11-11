@@ -1,7 +1,7 @@
 # makesh
-[![NPM](https://nodei.co/npm/makesh.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/makesh/)
-
 [![dependencies](https://david-dm.org/sergiodxa/makesh.png)](https://david-dm.org/sergiodxa/makesh)
+
+[![No Maintenance Intended](http://unmaintained.tech/badge.svg)](http://unmaintained.tech/)
 
 Tiny CLI program to initialize an application defining the application name and the framework to use.
 
